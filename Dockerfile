@@ -1,8 +1,7 @@
-FROM sflyr/ubuntu
+FROM debian:jessie-slim
 MAINTAINER sflyr
 
-RUN apt-get -y update
-RUN apt-get -y install libaio1 unzip rlwrap
+RUN apt-get -y update && apt-get -y install libaio1 rlwrap unzip && rm -rf /var/lib/apt/lists/*
 ADD instantclient*.zip /
 RUN echo instantclient*zip | xargs -n1 unzip
 
