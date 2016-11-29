@@ -1,7 +1,7 @@
-Pass the URL of the Oracle server with `URL` envvar:
+Usage:
 
-```
-$ docker run -e URL=<user>/<password>@//xxx.yyy.eu-west-1.rds.amazonaws.com:1521/ORCL -ti sflyr/sqlplus
+```bash
+$ docker run --rm -it sflyr/sqlplus <user>/<password>@<host>:1521/ORCL
 
 SQL*Plus: Release 11.2.0.3.0 Production on Tue Aug 11 15:41:07 2015
 
