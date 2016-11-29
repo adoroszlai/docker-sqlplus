@@ -21,4 +21,8 @@ ENV PATH $PATH:$HOME/bin
 
 USER $USER
 
+RUN mkdir $HOME/scripts
+VOLUME $HOME/scripts
+ENV SQLPATH $HOME/scripts
+
 ENTRYPOINT [ "entrypoint.sh" ]
