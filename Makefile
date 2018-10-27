@@ -1,4 +1,5 @@
-TAG ?= $(if $(TRAVIS_BRANCH),$(TRAVIS_BRANCH),"latest")
+TRAVIS_BRANCH ?= master
+TAG ?= $(subst master,latest,$(TRAVIS_BRANCH))
 
 build:
 	docker build --no-cache -t $(DOCKER_USERNAME)/sqlplus:build .
